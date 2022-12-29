@@ -1,0 +1,117 @@
+
+	- Initalize express app
+	- Installing pacges 
+	- Adding folder structure
+__________________________________________________________
+
+	- Impliminting user schima
+	- Imliminting user controller
+		- Imliminting user methods 	
+			- Create user method
+			- Read user method
+			- Update user method
+			- Delete user method
+
+__________________________________________________________
+
+	- Implementing rules schmea
+		- Imliminting rules controller
+		- Imliminting rules methods 	
+			- Create rules method
+			- Read rules method
+			- Update rules method
+			- Delete rules method
+__________________________________________________________
+
+	- Implementing URLs schmea
+		- Imliminting URLs controller
+		- Imliminting URLs methods 	
+			- Create URLs method
+			- Read URLs method
+			- Update URLs method
+			- Delete URLs method
+
+__________________________________________________________
+
+
+	- Implementing URLs schmea
+		- Imliminting URLs controller
+		- Imliminting URLs methods 	
+			- Create URLs method
+			- Read URLs method
+			- Update URLs method
+			- Delete URLs method
+
+__________________________________________________________
+
+
+	- Implementing projects schmea
+		- Imliminting projects controller
+		- Imliminting projects methods 	
+			- Create projects method
+			- Read projects method
+			- Update projects method
+			- Delete projects method
+
+__________________________________________________________
+
+
+	- Implementing buildings schmea
+		- Imliminting buildings controller
+		- Imliminting buildings methods 	
+			- Create buildings method
+			- Read buildings method
+			- Update buildings method
+			- Delete buildings method
+
+
+
+__________________________________________________________
+
+
+	- Implementing floors schmea
+		- Imliminting floors controller
+		- Imliminting floors methods 	
+			- Create floors method
+			- Read floors method
+			- Update floors method
+			- Delete floors method
+
+__________________________________________________________
+
+
+	- Implementing units schmea
+		- Imliminting units controller
+		- Imliminting units methods 	
+			- Create units method
+			- Read units method
+			- Update units method
+			- Delete units method
+
+
+
+__________________________________________________________
+
+
+	- Implementing payments schmea
+		- Imliminting payments controller
+		- Imliminting payments methods 	
+			- Create payments method
+			- Read payments method
+			- Update payments method
+			- Delete payments method
+__________________________________________________________
+
+
+	- Implementing authentication middleware
+
+	- Implementing authorization middleware
+
+
+
+__________________________________________________________
+
+ 	- export pdf from paymint
+			
+
+
