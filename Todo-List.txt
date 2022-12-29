@@ -1,6 +1,6 @@
 
-	- Initialize express app
-	- Installing packages 
+	- Initialize express app		✓  DONE 
+	- Installing packages 			✓  DONE 
 	- Adding folder structure
 __________________________________________________________
 

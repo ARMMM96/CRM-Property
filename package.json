@@ -19,7 +19,11 @@
   },
   "homepage": "https://github.com/ARMMM96/CRM-Property#readme",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
     "dotenv": "^16.0.3",
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "mongoose": "^6.8.2",
+    "validator": "^13.7.0"
   }
 }
