@@ -1,7 +1,8 @@
 
 	- Initialize express app		✓  DONE 
 	- Installing packages 			✓  DONE 
-	- Adding folder structure
+	- Adding folder structure		✓  DONE 
+	- Connect to Mongo DB
 __________________________________________________________
 
 	- Impliminting user schima
