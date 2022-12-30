@@ -9,8 +9,8 @@ __________________________________________________________
 	- Imliminting user controller		✓  DONE 
 		- Imliminting user methods 	
 			- Create user method		✓  DONE 
-				- Register user route 	
-			- Read user method
+				- Register user route 	✓  DONE 
+			- Read user method			
 				- Render user data route 	
 			- Update user method
 				- Update user data route
