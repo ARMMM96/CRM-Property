@@ -25,15 +25,17 @@ __________________________________________________________
 - Implementing rules schema							✓  DONE 
 		- Impliminting rules routes					✓  DONE
 			- create - reade - update - delete
-		- Imliminting rules controller			
-		- Imliminting rules methods 	
+		- Imliminting rules controller				✓  DONE
+		- Imliminting rules methods 				✓  DONE
 			- Create rules method
 			- Read rules method
 			- Update rules method
 			- Delete rules method
 __________________________________________________________
 
-	- Implementing URLs schema
+	- Implementing URLs schema									✓  DONE
+		- Impliminting rules routes					
+			- create - reade - update - delete
 		- Imliminting URLs controller
 		- Imliminting URLs methods 	
 			- Create URLs method
