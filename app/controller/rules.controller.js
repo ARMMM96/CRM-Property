@@ -1,6 +1,6 @@
 const rulesModel = require('../db/models/roles.model')
 const helper = require("../helpers/helpers")
-class User {
+class Rules {
     static createRule = async (req, res) => {
         try {
             const rulesData = new rulesModel(req.body)
@@ -43,4 +43,4 @@ class User {
         }
     }
 }
-module.exports = User
+module.exports = Rules
