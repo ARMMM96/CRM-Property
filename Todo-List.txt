@@ -13,9 +13,9 @@ __________________________________________________________
 			- Read user method				✓  DONE 
 				- Render user data route 	✓  DONE 
 			- Update user method			✓  DONE 
-				- Update user data route
-			- Delete user method
-				- Update user data route
+				- Update user data route	✓  DONE 
+			- Delete user method			✓  DONE 
+				- Delete user route
 __________________________________________________________
 
 	- Implementing rules schmea

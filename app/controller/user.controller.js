@@ -49,6 +49,21 @@ class User {
         }
     }
 
+    static deleteUser = async (req, res) => {
+        try {
+            const user = await userModel.findByIdAndRemove(req.body.id)
+            res.json({
+                user: user,
+                'message': "Deleted"
+            })
+        } catch (e) {
+            res.status(500).send({
+                apiStatus: false,
+                data: e.message,
+                message: "error updating user",
+            });
 
+        }
+    }
 }
 module.exports = User
