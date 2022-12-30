@@ -5,7 +5,7 @@
 	- Connect to Mongo DB			✓  DONE 
 __________________________________________________________
 
-	- Impliminting user schima				✓  DONE 
+	- Impliminting user schema				✓  DONE 
 	- Imliminting user controller			✓  DONE 
 		- Imliminting user methods 			✓  DONE 
 			- Create user method			✓  DONE 
@@ -22,7 +22,9 @@ __________________________________________________________
 
 __________________________________________________________
 
-	- Implementing rules schmea				✓  DONE 
+- Implementing rules schema							✓  DONE 
+		- Impliminting rules routes					✓  DONE
+			- create - reade - update - delete
 		- Imliminting rules controller
 		- Imliminting rules methods 	
 			- Create rules method
@@ -31,7 +33,7 @@ __________________________________________________________
 			- Delete rules method
 __________________________________________________________
 
-	- Implementing URLs schmea
+	- Implementing URLs schema
 		- Imliminting URLs controller
 		- Imliminting URLs methods 	
 			- Create URLs method
@@ -43,7 +45,7 @@ __________________________________________________________
 __________________________________________________________
 
 
-	- Implementing projects schmea
+	- Implementing projects schema
 		- Imliminting projects controller
 		- Imliminting projects methods 	
 			- Create projects method
@@ -54,7 +56,7 @@ __________________________________________________________
 __________________________________________________________
 
 
-	- Implementing buildings schmea
+	- Implementing buildings schema
 		- Imliminting buildings controller
 		- Imliminting buildings methods 	
 			- Create buildings method
@@ -67,7 +69,7 @@ __________________________________________________________
 __________________________________________________________
 
 
-	- Implementing floors schmea
+	- Implementing floors schema
 		- Imliminting floors controller
 		- Imliminting floors methods 	
 			- Create floors method
@@ -78,7 +80,7 @@ __________________________________________________________
 __________________________________________________________
 
 
-	- Implementing units schmea
+	- Implementing units schema
 		- Imliminting units controller
 		- Imliminting units methods 	
 			- Create units method
@@ -91,7 +93,7 @@ __________________________________________________________
 __________________________________________________________
 
 
-	- Implementing payments schmea
+	- Implementing payments schema
 		- Imliminting payments controller
 		- Imliminting payments methods 	
 			- Create payments method
