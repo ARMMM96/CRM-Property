@@ -5,14 +5,14 @@
 	- Connect to Mongo DB			✓  DONE 
 __________________________________________________________
 
-	- Impliminting user schima			✓  DONE 
-	- Imliminting user controller		✓  DONE 
+	- Impliminting user schima				✓  DONE 
+	- Imliminting user controller			✓  DONE 
 		- Imliminting user methods 	
-			- Create user method		✓  DONE 
-				- Register user route 	✓  DONE 
-			- Read user method			
-				- Render user data route 	
-			- Update user method
+			- Create user method			✓  DONE 
+				- Register user route 		✓  DONE 
+			- Read user method				✓  DONE 
+				- Render user data route 	✓  DONE 
+			- Update user method			✓  DONE 
 				- Update user data route
 			- Delete user method
 				- Update user data route

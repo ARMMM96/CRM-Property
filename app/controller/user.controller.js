@@ -31,6 +31,24 @@ class User {
             });
         }
     }
+    static updateUserData = async (req, res) => {
+        try {
+            const userData = await userModel.findOneAndUpdate(
+                { _id: req.body.id },
+                { ...req.body },
+                { new: true }
+            );
+            res.send(userData)
+        }
+        catch (e) {
+            res.status(500).send({
+                apiStatus: false,
+                data: e.message,
+                message: "error updating user",
+            });
+        }
+    }
+
 
 }
 module.exports = User
