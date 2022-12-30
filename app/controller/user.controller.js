@@ -38,7 +38,7 @@ class User {
 
     static deleteUser = async (req, res) => {
         try {
-            const user = await userModel.findByIdAndRemove(req.body.id)
+            const userData = await userModel.findByIdAndRemove(req.body.id)
             helper.resHandler(res, 200, true, userData, "User deleted")
         } catch (e) {
             helper.resHandler(res, 500, false, e, e.message)

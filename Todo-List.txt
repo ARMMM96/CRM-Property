@@ -25,7 +25,7 @@ __________________________________________________________
 - Implementing rules schema							✓  DONE 
 		- Impliminting rules routes					✓  DONE
 			- create - reade - update - delete
-		- Imliminting rules controller
+		- Imliminting rules controller			
 		- Imliminting rules methods 	
 			- Create rules method
 			- Read rules method
