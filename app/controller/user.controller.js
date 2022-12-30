@@ -8,7 +8,6 @@ class User {
             res.send(userData)
         }
         catch (e) {
-            console.log(e.message)
             res.status(500).send({
                 apiStatus: false,
                 data: e.message,
@@ -60,7 +59,7 @@ class User {
             res.status(500).send({
                 apiStatus: false,
                 data: e.message,
-                message: "error updating user",
+                message: "error deleting user",
             });
 
         }
