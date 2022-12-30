@@ -7,7 +7,7 @@ __________________________________________________________
 
 	- Impliminting user schima				✓  DONE 
 	- Imliminting user controller			✓  DONE 
-		- Imliminting user methods 	
+		- Imliminting user methods 			✓  DONE 
 			- Create user method			✓  DONE 
 				- Register user route 		✓  DONE 
 			- Read user method				✓  DONE 
@@ -15,7 +15,11 @@ __________________________________________________________
 			- Update user method			✓  DONE 
 				- Update user data route	✓  DONE 
 			- Delete user method			✓  DONE 
-				- Delete user route
+				- Delete user route			✓  DONE 
+__________________________________________________________
+
+- Implementing helper function to handle response ✓  DONE 
+
 __________________________________________________________
 
 	- Implementing rules schmea
@@ -35,16 +39,6 @@ __________________________________________________________
 			- Update URLs method
 			- Delete URLs method
 
-__________________________________________________________
-
-
-	- Implementing URLs schmea
-		- Imliminting URLs controller
-		- Imliminting URLs methods 	
-			- Create URLs method
-			- Read URLs method
-			- Update URLs method
-			- Delete URLs method
 
 __________________________________________________________
 
