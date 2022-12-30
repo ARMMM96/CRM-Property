@@ -34,8 +34,8 @@ __________________________________________________________
 __________________________________________________________
 
 	- Implementing URLs schema									✓  DONE
-		- Impliminting rules routes					
-			- create - reade - update - delete
+		- Impliminting URLs routes								
+			- create - reade - update - delete					
 		- Imliminting URLs controller
 		- Imliminting URLs methods 	
 			- Create URLs method
