@@ -1,18 +1,15 @@
 const userModel = require('../db/models/user.model')
+const helper = require("../helpers/helpers")
 class User {
     static register = async (req, res) => {
         try {
             const userData = new userModel(req.body)
             console.log(req.body)
             await userData.save()
-            res.send(userData)
+            helper.resHandler(res, 200, true, userData, "User registered successfully")
         }
         catch (e) {
-            res.status(500).send({
-                apiStatus: false,
-                data: e.message,
-                message: "error adding new user",
-            });
+            helper.resHandler(res, 500, false, e, e.message)
         }
     }
     static getSingleUser = async (req, res) => {
@@ -20,14 +17,10 @@ class User {
             const userData = await userModel.findOne({
                 _id: req.body.id
             });
-            res.send(userData)
+            helper.resHandler(res, 200, true, userData, "User found")
         }
         catch (e) {
-            res.status(500).send({
-                apiStatus: false,
-                data: e.message,
-                message: "error finding user",
-            });
+            helper.resHandler(res, 500, false, e, e.message)
         }
     }
     static updateUserData = async (req, res) => {
@@ -37,31 +30,19 @@ class User {
                 { ...req.body },
                 { new: true }
             );
-            res.send(userData)
+            helper.resHandler(res, 200, true, userData, "User updated")
         }
         catch (e) {
-            res.status(500).send({
-                apiStatus: false,
-                data: e.message,
-                message: "error updating user",
-            });
+            helper.resHandler(res, 500, false, e, e.message)
         }
     }
 
     static deleteUser = async (req, res) => {
         try {
             const user = await userModel.findByIdAndRemove(req.body.id)
-            res.json({
-                user: user,
-                'message': "Deleted"
-            })
+            helper.resHandler(res, 200, true, userData, "User deleted")
         } catch (e) {
-            res.status(500).send({
-                apiStatus: false,
-                data: e.message,
-                message: "error deleting user",
-            });
-
+            helper.resHandler(res, 500, false, e, e.message)
         }
     }
 }
