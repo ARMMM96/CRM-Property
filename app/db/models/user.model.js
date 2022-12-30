@@ -6,7 +6,7 @@ const userSchema = mongoose.Schema({
         type: String,
         trim: true,
         lowercase: true,
-        minLength: 5,
+        minLength: 3,
         maxLength: 20,
         required: true
     },
@@ -14,7 +14,7 @@ const userSchema = mongoose.Schema({
         type: String,
         trim: true,
         lowercase: true,
-        minLength: 5,
+        minLength: 3,
         maxLength: 20,
         required: true
     },
@@ -65,11 +65,12 @@ const userSchema = mongoose.Schema({
                 trim: true,
                 required: true
             },
-            details: {type:String}
+            details: { type: String }
         }
     ],
 
 })
 
 const User = mongoose.model("User", userSchema)
+
 module.exports = User
