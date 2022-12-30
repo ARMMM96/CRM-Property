@@ -4,7 +4,6 @@ class User {
     static register = async (req, res) => {
         try {
             const userData = new userModel(req.body)
-            console.log(req.body)
             await userData.save()
             helper.resHandler(res, 200, true, userData, "User registered successfully")
         }

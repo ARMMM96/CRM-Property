@@ -22,7 +22,7 @@ __________________________________________________________
 
 __________________________________________________________
 
-	- Implementing rules schmea
+	- Implementing rules schmea				✓  DONE 
 		- Imliminting rules controller
 		- Imliminting rules methods 	
 			- Create rules method
