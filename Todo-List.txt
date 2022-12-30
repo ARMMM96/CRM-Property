@@ -5,7 +5,7 @@
 	- Connect to Mongo DB			✓  DONE 
 __________________________________________________________
 
-	- Impliminting user schima
+	- Impliminting user schima			✓  DONE 
 	- Imliminting user controller
 		- Imliminting user methods 	
 			- Create user method
