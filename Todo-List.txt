@@ -6,9 +6,9 @@
 __________________________________________________________
 
 	- Impliminting user schima			✓  DONE 
-	- Imliminting user controller
+	- Imliminting user controller		✓  DONE 
 		- Imliminting user methods 	
-			- Create user method
+			- Create user method		
 			- Read user method
 			- Update user method
 			- Delete user method
