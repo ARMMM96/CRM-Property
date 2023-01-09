@@ -16,9 +16,12 @@ app.use("/api/rules/", rulesRoutes)
 app.use("/api/routes/", urlsRoutes)
 
 
-app.use("/", (req, res) => {
-    res.send('Hello World')
+app.all("*", (req, res) => {
+    res.status(404).send({
+        apisStatus: false,
+        message: "Invalid URL",
+        data: {}
+    })
 })
-
 
 module.exports = app
