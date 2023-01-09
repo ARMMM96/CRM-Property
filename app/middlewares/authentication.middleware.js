@@ -1,5 +1,5 @@
 const userModel = require("../../database/models/user.model")
-const resHelper = require("../helpers/resHelper")
+const resHelper = require("../helpers/helpers")
 const jwt = require("jsonwebtoken")
 const authentication = async (req, res, next) => {
     try {
