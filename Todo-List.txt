@@ -24,24 +24,24 @@ __________________________________________________________
 
 - Implementing rules schema							✓  DONE 
 		- Impliminting rules routes					✓  DONE
-			- create - reade - update - delete
+			- create - reade - update - delete		✓  DONE
 		- Imliminting rules controller				✓  DONE
 		- Imliminting rules methods 				✓  DONE
-			- Create rules method
-			- Read rules method
-			- Update rules method
-			- Delete rules method
+			- Create rules method					✓  DONE
+			- Read rules method						✓  DONE
+			- Update rules method					✓  DONE
+			- Delete rules method					✓  DONE
 __________________________________________________________
 
 	- Implementing URLs schema									✓  DONE
-		- Impliminting URLs routes								
-			- create - reade - update - delete					
-		- Imliminting URLs controller
-		- Imliminting URLs methods 	
-			- Create URLs method
-			- Read URLs method
-			- Update URLs method
-			- Delete URLs method
+		- Impliminting URLs routes								✓  DONE	
+			- create - reade - update - delete					✓  DONE
+		- Imliminting URLs controller							✓  DONE
+		- Imliminting URLs methods 								✓  DONE
+			- Create URLs method								✓  DONE
+			- Read URLs method									✓  DONE
+			- Update URLs method								✓  DONE
+			- Delete URLs method								✓  DONE
 
 
 __________________________________________________________
@@ -105,9 +105,9 @@ __________________________________________________________
 __________________________________________________________
 
 
-	- Implementing authentication middleware
+	- Implementing authentication middleware			✓  DONE 
 
-	- Implementing authorization middleware
+	- Implementing authorization middleware				✓  DONE 
 
 
 
