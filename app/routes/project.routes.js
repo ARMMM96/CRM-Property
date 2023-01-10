@@ -5,7 +5,7 @@ const projectController = require("../controller/project.controller")
 router.post("/create", projectController.createProject)
 router.get("/projects", projectController.getProjects)
 router.get("/project", projectController.getProject)
-// router.patch("/update", projectController.updateRules)
+router.patch("/update", projectController.updateProject)
 // router.delete("/delete", projectController.deleteRule)
 
 
