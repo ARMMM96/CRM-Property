@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 
 const projectSchema = mongoose.Schema({
-    Name: {
+    name: {
         type: String,
         trim: true,
         lowercase: true,
