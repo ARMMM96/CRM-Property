@@ -28,7 +28,12 @@ const userSchema = mongoose.Schema({
     trim: true,
     lowercase: true,
     required: true,
-    unique: true
+    unique: true,
+    validate (value) {
+      if (!validator.isEmail(value)) {
+        throw new Error('invalid email format')
+      }
+    }
   },
   status: {
     type: Boolean,
@@ -42,8 +47,20 @@ const userSchema = mongoose.Schema({
     type: String,
     trim: true,
     minLength: 5,
-    required: true
-    // match: ''
+    required: true,
+    validate (value) {
+      const isValidpassword = validator.isStrongPassword(value, {
+        minLength: 8,
+        minLowercase: 1,
+        minUppercase: 1,
+        minNumbers: 1,
+        minSymbols: 1,
+        returnScore: false
+      })
+      if (!isValidpassword) {
+        throw new Error('invalid password format')
+      }
+    }
   },
   gender: {
     type: String,
