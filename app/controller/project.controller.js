@@ -12,6 +12,15 @@ class Project {
             helper.resHandler(res, 500, false, e, e.message)
         }
     }
+    static getProjects = async (req, res) => {
+        try {
+            const projectData = await projectModel.find();
+            helper.resHandler(res, 200, true, projectData, "Project found")
+        }
+        catch (e) {
+            helper.resHandler(res, 500, false, e, e.message)
+        }
+    }
 
 }
 module.exports = Project
