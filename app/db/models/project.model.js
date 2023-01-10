@@ -12,7 +12,6 @@ const projectSchema = mongoose.Schema({
     buildings: {
         type: Number,
         min: 1,
-        default: 21
     },
     type: {
         type: String,
