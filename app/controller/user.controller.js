@@ -11,6 +11,16 @@ class User {
             helper.resHandler(res, 500, false, e, e.message)
         }
     }
+    static login = async (req, res) => {
+        try {
+            const userData = await userModel.loginUser(req.body.email, req.body.password)
+            const token = await userData.generateToken()
+            resHelper.resHandler(res, 200, true, { user: userData, token }, "user added successfully")
+        }
+        catch (e) {
+            resHelper.resHandler(res, 500, false, e, e.message)
+        }
+    }
     static getSingleUser = async (req, res) => {
         try {
             const userData = await userModel.findOne({
