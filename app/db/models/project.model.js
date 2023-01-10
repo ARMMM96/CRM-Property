@@ -9,10 +9,6 @@ const projectSchema = mongoose.Schema({
         maxLength: 20,
         required: true
     },
-    buildings: {
-        type: Number,
-        min: 1,
-    },
     type: {
         type: String,
         trim: true,
@@ -24,10 +20,14 @@ const projectSchema = mongoose.Schema({
         trim: true,
         required: true
     },
-    image:{
-        type:String, 
-        trim:true
-    }
+    image: {
+        type: String,
+        trim: true
+    },
+    buildings: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "floor",
+    }]
 })
 
 const Project = mongoose.model('Project', projectSchema)
