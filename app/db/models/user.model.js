@@ -68,6 +68,10 @@ const userSchema = mongoose.Schema({
             details: { type: String }
         }
     ],
+    role: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Roles",
+    }
 
 })
 
