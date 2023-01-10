@@ -46,5 +46,14 @@ class Project {
         }
     }
 
+    static deleteProject = async (req, res) => {
+        try {
+            const projectData = await projectModel.findByIdAndRemove(req.body.id)
+            helper.resHandler(res, 200, true, projectData, "Project deleted")
+        } catch (e) {
+            helper.resHandler(res, 500, false, e, e.message)
+        }
+    }
+
 }
 module.exports = Project
