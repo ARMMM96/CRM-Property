@@ -48,6 +48,15 @@ __________________________________________________________
 
 
 	- Implementing projects schema
+		{
+			project name:	string
+			tpye: enum[show, sell]
+			project location: {} 
+			project image:	string
+			porject details: string
+			buildings: ref by ID to buildings schema
+		}
+
 		- Imliminting projects controller
 		- Imliminting projects methods 	
 			- Create projects method
@@ -59,6 +68,13 @@ __________________________________________________________
 
 
 	- Implementing buildings schema
+		{
+			bulding location: string
+			bulding floors: number
+			bulding image: string
+			floors: ref by Id to floors schema
+		}
+
 		- Imliminting buildings controller
 		- Imliminting buildings methods 	
 			- Create buildings method
@@ -72,6 +88,11 @@ __________________________________________________________
 
 
 	- Implementing floors schema
+		{
+			floorNumber:	string
+			floorImage: 	string
+			unit: ref by Id to units schema
+		}
 		- Imliminting floors controller
 		- Imliminting floors methods 	
 			- Create floors method
@@ -83,6 +104,14 @@ __________________________________________________________
 
 
 	- Implementing units schema
+		{
+			size:unber
+			numberOfRooms:
+			
+		}
+
+
+
 		- Imliminting units controller
 		- Imliminting units methods 	
 			- Create units method
@@ -96,6 +125,11 @@ __________________________________________________________
 
 
 	- Implementing payments schema
+		{
+			totalAmount
+			year:
+			month:
+		}
 		- Imliminting payments controller
 		- Imliminting payments methods 	
 			- Create payments method
