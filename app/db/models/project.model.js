@@ -24,6 +24,10 @@ const projectSchema = mongoose.Schema({
         type: String,
         trim: true,
         required: true
+    },
+    image:{
+        type:String, 
+        trim:true
     }
 })
 
