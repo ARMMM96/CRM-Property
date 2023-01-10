@@ -6,7 +6,7 @@ router.post("/create", projectController.createProject)
 router.get("/projects", projectController.getProjects)
 router.get("/project", projectController.getProject)
 router.patch("/update", projectController.updateProject)
-// router.delete("/delete", projectController.deleteRule)
+router.delete("/delete", projectController.deleteProject)
 
 
 
