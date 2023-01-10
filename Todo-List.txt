@@ -47,31 +47,33 @@ __________________________________________________________
 __________________________________________________________
 
 
-	- Implementing projects schema
+	- Implementing projects schema		✓  DONE
 		{
-			project name:	string
-			tpye: enum[show, sell]
-			project location: {} 
+			project name:	string		✓  DONE
+			tpye: enum[show, sell]		✓  DONE
+			project location: {} 		✓  DONE
 			project image:	string
-			porject details: string
+			porject details: string		
 			buildings: ref by ID to buildings schema
 		}
 
-		- Imliminting projects controller
-		- Imliminting projects methods 	
-			- Create projects method
-			- Read projects method
-			- Update projects method
-			- Delete projects method
+		- Imliminting projects controller	✓  DONE
+		- Imliminting projects methods 		✓  DONE	
+			- Create projects method		✓  DONE
+			- Read projects method			✓  DONE
+			- Read project method			✓  DONE
+			- Update projects method		✓  DONE
+			- Delete projects method		✓  DONE
 
 __________________________________________________________
 
 
 	- Implementing buildings schema
-		{
-			bulding location: string
-			bulding floors: number
-			bulding image: string
+		{	
+			number: number 			✓ DONE
+			tpye: enum[show, sell]		✓  DONE
+			bulding location: string	✓  DONE	
+			bulding image: string		✓  DONE
 			floors: ref by Id to floors schema
 		}
 
@@ -107,7 +109,7 @@ __________________________________________________________
 		{
 			size:unber
 			numberOfRooms:
-			
+			image:
 		}
 
 
