@@ -10,10 +10,12 @@ app.use(express.json())
 const userRoutes = require('./routes/user.routes')
 const rulesRoutes = require('./routes/roles.routes')
 const urlsRoutes = require('./routes/urls.routes')
+const projectRoutes = require('./routes/project.routes')
 
 app.use("/api/user/", userRoutes)
 app.use("/api/rules/", rulesRoutes)
 app.use("/api/routes/", urlsRoutes)
+app.use("/api/project/", projectRoutes)
 
 
 app.all("*", (req, res) => {
