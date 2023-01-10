@@ -101,15 +101,21 @@ userSchema.pre('save', async function () {
   }
 })
 
-
 userSchema.methods.generateToken = async function () {
-    const userData = this
-    const token = jwt.sign({ _id: userData._id }, process.env.tokenPassword)
-    userData.tokens = userData.tokens.concat({ token })
-    await userData.save()
-    return token
+  const userData = this
+  const token = jwt.sign({ _id: userData._id }, process.env.tokenPassword)
+  userData.tokens = userData.tokens.concat({ token })
+  await userData.save()
+  return token
 }
 
+userSchema.statics.loginUser = async (email, password) => {
+  const userData = await User.findOne({ email })
+  if (!userData) throw new Error('invalid email')
+  const validatePassword = await bcryptjs.compare(password, userData.password)
+  if (!validatePassword) throw new Error('invalid password')
+  return userData
+}
 
 const User = mongoose.model('User', userSchema)
 
