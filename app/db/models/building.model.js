@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 
 const buildingSchema = mongoose.Schema({
     number: {
-        type: number,
+        type: Number,
         trim: true,
         required: true
     },
