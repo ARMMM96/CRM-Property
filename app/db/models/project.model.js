@@ -26,7 +26,7 @@ const projectSchema = mongoose.Schema({
     },
     buildings: [{
         type: mongoose.Schema.Types.ObjectId,
-        ref: "floor",
+        ref: "bulding",
     }]
 })
 
