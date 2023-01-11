@@ -12,5 +12,14 @@ class Building {
             helper.resHandler(res, 500, false, e, e.message)
         }
     }
+    static getBuildings = async (req, res) => {
+        try {
+            const buildingData = await buildingModel.find();
+            helper.resHandler(res, 200, true, buildingData, "Buildings found")
+        }
+        catch (e) {
+            helper.resHandler(res, 500, false, e, e.message)
+        }
+    }
 }
 module.exports = Building

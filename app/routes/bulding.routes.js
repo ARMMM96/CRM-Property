@@ -4,7 +4,7 @@ const buildingController = require("../controller/building.controller")
 
 
 router.post("/create", buildingController.createBuilding)
-router.get("/buildings", buildingController.getbuildings)
+router.get("/buildings", buildingController.getBuildings)
 
 
 module.exports = router;
