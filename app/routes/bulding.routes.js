@@ -3,7 +3,7 @@ const router = new express.Router();
 const buildingController = require("../controller/building.controller")
 
 
-router.post("/create", buildingController.createbuilding)
+router.post("/create", buildingController.createBuilding)
 
 
 

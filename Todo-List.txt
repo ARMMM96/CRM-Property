@@ -70,11 +70,11 @@ __________________________________________________________
 
 	- Implementing buildings schema
 		{	
-			number: number 			✓ DONE
-			tpye: enum[show, sell]		✓  DONE
-			bulding location: string	✓  DONE	
-			bulding image: string		✓  DONE
-			floors: ref by Id to floors schema
+			number: number 						✓  DONE
+			tpye: enum[show, sell]				✓  DONE
+			bulding location: string			✓  DONE	
+			bulding image: string				✓  DONE
+			floors: ref by Id to floors schema	✓  DONE
 		}
 
 		- Imliminting buildings controller
