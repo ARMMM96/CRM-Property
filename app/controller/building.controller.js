@@ -21,5 +21,18 @@ class Building {
             helper.resHandler(res, 500, false, e, e.message)
         }
     }
+    static updateBuilding = async (req, res) => {
+        try {
+            const buildingData = await buildingModel.findOneAndUpdate(
+                { _id: req.body.id },
+                { ...req.body },
+                { new: true }
+            );
+            helper.resHandler(res, 200, true, buildingData, "Building updated")
+        }
+        catch (e) {
+            helper.resHandler(res, 500, false, e, e.message)
+        }
+    }
 }
 module.exports = Building
