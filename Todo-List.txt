@@ -77,19 +77,19 @@ __________________________________________________________
 			floors: ref by Id to floors schema	✓  DONE
 		}
 
-		- Imliminting buildings controller
-		- Imliminting buildings methods 	
-			- Create buildings method
-			- Read buildings method
-			- Update buildings method
-			- Delete buildings method
+		- Imliminting buildings controller		✓  DONE	
+		- Imliminting buildings methods 		✓  DONE
+			- Create buildings method			✓  DONE
+			- Read buildings method				✓  DONE
+			- Update buildings method			✓  DONE
+			- Delete buildings method			✓  DONE
 
 
 
 __________________________________________________________
 
 
-	- Implementing floors schema
+	- Implementing floors schema				✓  DONE
 		{
 			floorNumber:	string
 			floorImage: 	string
