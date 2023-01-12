@@ -13,6 +13,16 @@ class Floor {
         }
     }
 
+    static getFloors = async (req, res) => {
+        try {
+            const floorData = await floorModel.find();
+            helper.resHandler(res, 200, true, floorData, "Floors found")
+        }
+        catch (e) {
+            helper.resHandler(res, 500, false, e, e.message)
+        }
+    }
+
 }
 
 module.exports = Floor
