@@ -34,5 +34,15 @@ class Building {
             helper.resHandler(res, 500, false, e, e.message)
         }
     }
+    static deleteBuilding = async (req, res) => {
+        try {
+            const buildingData = await buildingModel.findByIdAndRemove(req.body.id)
+            helper.resHandler(res, 200, true, buildingData, "Building deleted")
+        } catch (e) {
+            helper.resHandler(res, 500, false, e, e.message)
+        }
+    }
+
 }
+
 module.exports = Building
