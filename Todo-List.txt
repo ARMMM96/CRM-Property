@@ -95,20 +95,23 @@ __________________________________________________________
 			floorImage: 	string
 			unit: ref by Id to units schema
 		}
-		- Imliminting floors controller
-		- Imliminting floors methods 	
-			- Create floors method
-			- Read floors method
-			- Update floors method
-			- Delete floors method
+		- Imliminting floors controller			✓  DONE
+		- Imliminting floors methods 			✓  DONE
+			- Create floors method				✓  DONE
+			- Read floors method				✓  DONE
+			- Update floors method				✓  DONE
+			- Delete floors method				✓  DONE
 
 __________________________________________________________
 
 
-	- Implementing units schema
+	- Implementing units schema					✓  DONE
 		{
-			size:unber
-			numberOfRooms:
+			size:number
+			status:	['show', 'sell']
+			numberOfRooms: number
+			numberOfBathrooms: number
+			moreDetails: string
 			image:
 		}
 
