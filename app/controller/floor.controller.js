@@ -47,6 +47,14 @@ class Floor {
         }
     }
 
+    static deleteFloor = async (req, res) => {
+        try {
+            const floorData = await floorModel.findByIdAndRemove(req.body.id)
+            helper.resHandler(res, 200, true, floorData, "Floor deleted")
+        } catch (e) {
+            helper.resHandler(res, 500, false, e, e.message)
+        }
+    }
 
 
 }
