@@ -21,6 +21,16 @@ class Building {
             helper.resHandler(res, 500, false, e, e.message)
         }
     }
+    static getBuilding = async (req, res) => {
+        try {
+            const buildingData = await buildingModel.findById({ _id: req.body.id })
+            helper.resHandler(res, 200, true, buildingData, "Building found")
+        }
+        catch (e) {
+            helper.resHandler(res, 500, false, e, e.message)
+        }
+    }
+
     static updateBuilding = async (req, res) => {
         try {
             const buildingData = await buildingModel.findOneAndUpdate(
