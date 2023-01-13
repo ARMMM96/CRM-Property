@@ -29,6 +29,17 @@ class Unit {
         }
     }
 
+
+    static getUnits = async (req, res) => {
+        try {
+            const unitData = await unitModel.find();
+            helper.resHandler(res, 200, true, unitData, "Units found")
+        }
+        catch (e) {
+            helper.resHandler(res, 500, false, e, e.message)
+        }
+    }
+
 }
 
 module.exports = Unit
