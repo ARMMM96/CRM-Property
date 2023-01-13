@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 
-const buildingSchema = mongoose.Schema({
+const unitSchema = mongoose.Schema({
     size: {
         type: Number,
         trim: true,
@@ -23,7 +23,7 @@ const buildingSchema = mongoose.Schema({
         required: true
     },
     floorId: {
-        type: String,
+        type: mongoose.Schema.Types.ObjectId,
         trim: true,
         require: true
     },
@@ -33,6 +33,6 @@ const buildingSchema = mongoose.Schema({
     }
 })
 
-const Building = mongoose.model('Building', buildingSchema)
+const Unit = mongoose.model('Unit', unitSchema)
 
-module.exports = Building
+module.exports = Unit
