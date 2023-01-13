@@ -12,14 +12,16 @@ const rulesRoutes = require('./routes/roles.routes')
 const urlsRoutes = require('./routes/urls.routes')
 const projectRoutes = require('./routes/project.routes')
 const buildingRoutes = require('./routes/bulding.routes')
-const floorgRoutes = require('./routes/floor.routes')
+const floorRoutes = require('./routes/floor.routes')
+const unitRoutes = require('./routes/unit.routes')
 
 app.use("/api/user/", userRoutes)
 app.use("/api/rules/", rulesRoutes)
 app.use("/api/routes/", urlsRoutes)
 app.use("/api/project/", projectRoutes)
 app.use("/api/building/", buildingRoutes)
-app.use("/api/floor/", floorgRoutes)
+app.use("/api/floor/", floorRoutes)
+app.use("/api/unit/", unitRoutes)
 
 
 app.all("*", (req, res) => {
