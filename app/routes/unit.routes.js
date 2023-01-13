@@ -6,5 +6,6 @@ router.post("/create", unitController.createUnit)
 router.patch("/update", unitController.updateUnit)
 router.get("/units", unitController.getUnits)
 router.get("/unit", unitController.getUnit)
+router.get("/delete", unitController.deleteUnit)
 
 module.exports = router;
