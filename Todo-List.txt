@@ -117,25 +117,28 @@ __________________________________________________________
 
 
 
-		- Imliminting units controller
-		- Imliminting units methods 	
-			- Create units method
-			- Read units method
-			- Update units method
-			- Delete units method
+		- Imliminting units controller		✓  DONE
+		- Imliminting units methods 		✓  DONE
+			- Create units method			✓  DONE
+			- Read units method				✓  DONE
+			- Update units method			✓  DONE
+			- Delete units method			✓  DONE
 
 
 
 __________________________________________________________
 
 
-	- Implementing payments schema
+	- Implementing payments schema			✓  DONE
 		{
 			totalAmount
 			year:
 			month:
+			unitId:
+			customerId:
+			sallerId:
 		}
-		- Imliminting payments controller
+		- Imliminting payments controller	
 		- Imliminting payments methods 	
 			- Create payments method
 			- Read payments method
