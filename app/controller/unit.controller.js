@@ -40,6 +40,15 @@ class Unit {
         }
     }
 
+    static getUnit = async (req, res) => {
+        try {
+            const unitData = await unitModel.findById({ _id: req.body.id })
+            helper.resHandler(res, 200, true, unitData, "Unit found")
+        }
+        catch (e) {
+            helper.resHandler(res, 500, false, e, e.message)
+        }
+    }
 }
 
 module.exports = Unit
