@@ -36,6 +36,16 @@ class Paymint {
             helper.resHandler(res, 500, false, e, e.message)
         }
     }
+    static getPaymint = async (req, res) => {
+        try {
+            const paymintData = await paymintModel.findById({ _id: req.body.id })
+            helper.resHandler(res, 200, true, paymintData, "Paymint found")
+        }
+        catch (e) {
+            helper.resHandler(res, 500, false, e, e.message)
+        }
+    }
+
 
 }
 
