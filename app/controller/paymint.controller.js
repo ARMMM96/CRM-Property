@@ -13,6 +13,21 @@ class Paymint {
         }
     }
 
+    static updatePaymint = async (req, res) => {
+        try {
+            const paymintData = await paymintModel.findOneAndUpdate(
+                { _id: req.body.id },
+                { ...req.body },
+                { new: true }
+            );
+            helper.resHandler(res, 200, true, paymintData, "Project updated")
+        }
+        catch (e) {
+            helper.resHandler(res, 500, false, e, e.message)
+        }
+    }
+
+
 }
 
 module.exports = Paymint
