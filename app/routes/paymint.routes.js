@@ -7,6 +7,6 @@ router.post("/create", paymintController.createPaymint)
 router.patch("/update", paymintController.updatePaymint)
 router.get("/paymints", paymintController.getPaymints)
 router.get("/paymint", paymintController.getPaymint)
-
+router.delete("/delete", paymintController.deletePaymint)
 
 module.exports = router;
