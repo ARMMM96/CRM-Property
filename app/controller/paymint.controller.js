@@ -20,13 +20,22 @@ class Paymint {
                 { ...req.body },
                 { new: true }
             );
-            helper.resHandler(res, 200, true, paymintData, "Project updated")
+            helper.resHandler(res, 200, true, paymintData, "Paymint updated")
         }
         catch (e) {
             helper.resHandler(res, 500, false, e, e.message)
         }
     }
-
+    static getPaymints = async (req, res) => {
+        console.log("FIRE?")
+        try {
+            const paymintData = await paymintModel.find();
+            helper.resHandler(res, 200, true, paymintData, "Paymints found")
+        }
+        catch (e) {
+            helper.resHandler(res, 500, false, e, e.message)
+        }
+    }
 
 }
 
