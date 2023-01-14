@@ -25,4 +25,4 @@ const paymintSchema = mongoose.Schema({
 
 const Paymint = mongoose.model('Paymint', paymintSchema)
 
-module.exports = Floor
+module.exports = Paymint
