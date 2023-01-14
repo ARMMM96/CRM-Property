@@ -46,6 +46,14 @@ class Paymint {
         }
     }
 
+    static deletePaymint = async (req, res) => {
+        try {
+            const paymintData = await paymintModel.findByIdAndRemove(req.body.id)
+            helper.resHandler(res, 200, true, paymintData, "Paymint deleted")
+        } catch (e) {
+            helper.resHandler(res, 500, false, e, e.message)
+        }
+    }
 
 }
 
