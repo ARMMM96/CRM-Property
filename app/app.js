@@ -14,6 +14,8 @@ const projectRoutes = require('./routes/project.routes')
 const buildingRoutes = require('./routes/bulding.routes')
 const floorRoutes = require('./routes/floor.routes')
 const unitRoutes = require('./routes/unit.routes')
+const paymintRoutes = require('./routes/paymint.routes')
+
 
 app.use("/api/user/", userRoutes)
 app.use("/api/rules/", rulesRoutes)
@@ -22,6 +24,7 @@ app.use("/api/project/", projectRoutes)
 app.use("/api/building/", buildingRoutes)
 app.use("/api/floor/", floorRoutes)
 app.use("/api/unit/", unitRoutes)
+app.use("/api/paymint/", paymintRoutes)
 
 
 app.all("*", (req, res) => {
