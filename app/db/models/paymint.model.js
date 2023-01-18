@@ -6,6 +6,11 @@ const paymintSchema = mongoose.Schema({
         trim: true,
         required: true
     },
+    projectId: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "project",
+        required: true
+    },
     unitId: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "unit",
