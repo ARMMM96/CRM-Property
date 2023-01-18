@@ -21,6 +21,12 @@ const buildingSchema = mongoose.Schema({
         type: String,
         trim: true
     },
+    projectId: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "project",
+        trim: true,
+        require: true
+    },
     floors: [{
         type: mongoose.Schema.Types.ObjectId,
         ref: "floor",
