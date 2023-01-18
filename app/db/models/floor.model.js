@@ -10,6 +10,12 @@ const floorSchema = mongoose.Schema({
         type: String,
         trim: true
     },
+    buildingId: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "building",
+        trim: true,
+        require: true
+    },
     unit: [{
         type: mongoose.Schema.Types.ObjectId,
         ref: "unit",
