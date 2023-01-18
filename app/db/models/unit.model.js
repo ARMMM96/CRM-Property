@@ -24,6 +24,7 @@ const unitSchema = mongoose.Schema({
     },
     floorId: {
         type: mongoose.Schema.Types.ObjectId,
+        ref: "floor",
         trim: true,
         require: true
     },
