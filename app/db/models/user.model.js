@@ -32,7 +32,7 @@ const userSchema = mongoose.Schema({
     lowercase: true,
     required: true,
     unique: true,
-    validate (value) {
+    validate(value) {
       if (!validator.isEmail(value)) {
         throw new Error('invalid email format')
       }
@@ -51,7 +51,7 @@ const userSchema = mongoose.Schema({
     trim: true,
     minLength: 5,
     required: true,
-    validate (value) {
+    validate(value) {
       const isValidpassword = validator.isStrongPassword(value, {
         minLength: 8,
         minLowercase: 1,
@@ -101,6 +101,19 @@ const userSchema = mongoose.Schema({
 userSchema.pre('save', async function () {
   if (this.isModified('password')) {
     this.password = await bcryptjs.hash(this.password, 8)
+  }
+})
+userSchema.pre('findOneAndUpdate', async function (next) {
+  try {
+    if (this._update.password) {
+      console.log(this._update.password)
+      const hashed = await bcryptjs.hash(this._update.password, 10)
+      this._update.password = hashed;
+      next();
+    }
+    next();
+  } catch (err) {
+    return next(err);
   }
 })
 
