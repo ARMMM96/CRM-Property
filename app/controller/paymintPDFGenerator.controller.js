@@ -75,8 +75,12 @@ class paymintPDFGenerator {
             // Finalize PDF file
             doc.end();
 
+            // Preparing file name
+            const creationDate = new Date(Date.now()).toISOString().slice(0, 10);
+            const fileName = `${userData.firstName}-${userData.lastName}-${creationDate}`
+
             // Pipe its output somewhere, like to a file or HTTP response
-            doc.pipe(fs.createWriteStream('public/output.pdf'));
+            doc.pipe(fs.createWriteStream(`public/${fileName}.pdf`));
 
 
             helper.resHandler(res, 200, true, paymintData, "Paymint found")
