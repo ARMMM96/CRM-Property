@@ -59,7 +59,6 @@ class paymintPDFGenerator {
                 "Number of rooms": ` ${unitData.numberOfRooms}`,
                 "Number of bathrooms": ` ${unitData.numberOfBathrooms}`,
             }
-            console.log(unitInfo)
             // Create a document
             const doc = new PDFDocument({ margin: 50 });
 
@@ -82,8 +81,8 @@ class paymintPDFGenerator {
             // Pipe its output somewhere, like to a file or HTTP response
             doc.pipe(fs.createWriteStream(`public/${fileName}.pdf`));
 
-
-            helper.resHandler(res, 200, true, paymintData, "Paymint found")
+            //File location
+            res.redirect(`/${fileName}.pdf`)
 
 
         } catch (e) {
