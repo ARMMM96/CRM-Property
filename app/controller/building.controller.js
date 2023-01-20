@@ -15,7 +15,12 @@ class Building {
     static getBuildings = async (req, res) => {
         try {
             const buildingData = await buildingModel.find();
-            helper.resHandler(res, 200, true, buildingData, "Buildings found")
+            if (!buildingData) {
+                helper.resHandler(res, 404, false, null, "Buildings Is not exist")
+            } else {
+
+                helper.resHandler(res, 200, true, buildingData, "Buildings found")
+            }
         }
         catch (e) {
             helper.resHandler(res, 500, false, e, e.message)
@@ -24,7 +29,12 @@ class Building {
     static getBuilding = async (req, res) => {
         try {
             const buildingData = await buildingModel.findById({ _id: req.body.id })
-            helper.resHandler(res, 200, true, buildingData, "Building found")
+            if (!buildingData) {
+                helper.resHandler(res, 404, false, null, "Building Is not exist")
+            } else {
+
+                helper.resHandler(res, 200, true, buildingData, "Building found")
+            }
         }
         catch (e) {
             helper.resHandler(res, 500, false, e, e.message)
@@ -38,7 +48,12 @@ class Building {
                 { ...req.body },
                 { new: true }
             );
-            helper.resHandler(res, 200, true, buildingData, "Building updated")
+            if (!buildingData) {
+                helper.resHandler(res, 404, false, null, "Building Is not exist")
+            } else {
+
+                helper.resHandler(res, 200, true, buildingData, "Building updated")
+            }
         }
         catch (e) {
             helper.resHandler(res, 500, false, e, e.message)
@@ -47,7 +62,11 @@ class Building {
     static deleteBuilding = async (req, res) => {
         try {
             const buildingData = await buildingModel.findByIdAndRemove(req.body.id)
-            helper.resHandler(res, 200, true, buildingData, "Building deleted")
+            if (!buildingData) {
+                helper.resHandler(res, 404, false, null, "Building Is not exist")
+            } else {
+                helper.resHandler(res, 200, true, buildingData, "Building deleted")
+            }
         } catch (e) {
             helper.resHandler(res, 500, false, e, e.message)
         }
