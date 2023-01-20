@@ -15,10 +15,10 @@ class User {
         try {
             const userData = await userModel.loginUser(req.body.email, req.body.password)
             const token = await userData.generateToken()
-            resHelper.resHandler(res, 200, true, { user: userData, token }, "user added successfully")
+            helper.resHandler(res, 200, true, { user: userData, token }, "user added successfully")
         }
         catch (e) {
-            resHelper.resHandler(res, 500, false, e, e.message)
+            helper.resHandler(res, 500, false, e, e.message)
         }
     }
     static getSingleUser = async (req, res) => {
@@ -26,7 +26,13 @@ class User {
             const userData = await userModel.findOne({
                 _id: req.body.id
             });
-            helper.resHandler(res, 200, true, userData, "User found")
+            if (!userData) {
+                helper.resHandler(res, 404, false, null, "User Is not exist")
+
+            } else {
+
+                helper.resHandler(res, 200, true, userData, "User found")
+            }
         }
         catch (e) {
             helper.resHandler(res, 500, false, e, e.message)
@@ -39,7 +45,12 @@ class User {
                 { ...req.body },
                 { new: true }
             );
-            helper.resHandler(res, 200, true, userData, "User updated")
+            if (!userData) {
+                helper.resHandler(res, 404, false, null, "User Is not exist")
+            } else {
+
+                helper.resHandler(res, 200, true, userData, "User updated")
+            }
         }
         catch (e) {
             helper.resHandler(res, 500, false, e, e.message)
@@ -49,7 +60,14 @@ class User {
     static deleteUser = async (req, res) => {
         try {
             const userData = await userModel.findByIdAndRemove(req.body.id)
-            helper.resHandler(res, 200, true, userData, "User deleted")
+
+            if (!userData) {
+                helper.resHandler(res, 404, false, null, "User Is not exist")
+            } else {
+
+                helper.resHandler(res, 200, true, userData, "User deleted")
+            }
+
         } catch (e) {
             helper.resHandler(res, 500, false, e, e.message)
         }
