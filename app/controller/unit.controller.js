@@ -22,7 +22,11 @@ class Unit {
                 { ...req.body },
                 { new: true }
             );
-            helper.resHandler(res, 200, true, unitData, "Unit updated")
+            if (!unitData) {
+                helper.resHandler(res, 404, false, null, "Unit Is not exist")
+            } else {
+                helper.resHandler(res, 200, true, unitData, "Unit updated")
+            }
         }
         catch (e) {
             helper.resHandler(res, 500, false, e, e.message)
@@ -33,7 +37,12 @@ class Unit {
     static getUnits = async (req, res) => {
         try {
             const unitData = await unitModel.find();
-            helper.resHandler(res, 200, true, unitData, "Units found")
+            if (!unitData) {
+                helper.resHandler(res, 404, false, null, "Unit Is not exist")
+            } else {
+
+                helper.resHandler(res, 200, true, unitData, "Units found")
+            }
         }
         catch (e) {
             helper.resHandler(res, 500, false, e, e.message)
@@ -43,7 +52,12 @@ class Unit {
     static getUnit = async (req, res) => {
         try {
             const unitData = await unitModel.findById({ _id: req.body.id })
-            helper.resHandler(res, 200, true, unitData, "Unit found")
+            if (!unitData) {
+                helper.resHandler(res, 404, false, null, "Unit Is not exist")
+            } else {
+
+                helper.resHandler(res, 200, true, unitData, "Unit found")
+            }
         }
         catch (e) {
             helper.resHandler(res, 500, false, e, e.message)
@@ -53,7 +67,12 @@ class Unit {
     static deleteUnit = async (req, res) => {
         try {
             const unitData = await unitModel.findByIdAndRemove(req.body.id)
-            helper.resHandler(res, 200, true, unitData, "Unit deleted")
+            if (!unitData) {
+                helper.resHandler(res, 404, false, null, "Unit Is not exist")
+            } else {
+
+                helper.resHandler(res, 200, true, unitData, "Unit deleted")
+            }
         } catch (e) {
             helper.resHandler(res, 500, false, e, e.message)
         }
