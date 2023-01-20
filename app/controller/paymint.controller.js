@@ -20,7 +20,12 @@ class Paymint {
                 { ...req.body },
                 { new: true }
             );
-            helper.resHandler(res, 200, true, paymintData, "Paymint updated")
+            if (!paymintData) {
+                helper.resHandler(res, 404, false, null, "Paymint Is not exist")
+            } else {
+
+                helper.resHandler(res, 200, true, paymintData, "Paymint updated")
+            }
         }
         catch (e) {
             helper.resHandler(res, 500, false, e, e.message)
@@ -30,7 +35,12 @@ class Paymint {
         console.log("FIRE?")
         try {
             const paymintData = await paymintModel.find();
-            helper.resHandler(res, 200, true, paymintData, "Paymints found")
+            if (!paymintData) {
+                helper.resHandler(res, 404, false, null, "Paymints Is not exist")
+            } else {
+
+                helper.resHandler(res, 200, true, paymintData, "Paymints found")
+            }
         }
         catch (e) {
             helper.resHandler(res, 500, false, e, e.message)
@@ -39,7 +49,12 @@ class Paymint {
     static getPaymint = async (req, res) => {
         try {
             const paymintData = await paymintModel.findById({ _id: req.body.id })
-            helper.resHandler(res, 200, true, paymintData, "Paymint found")
+            if (!paymintData) {
+                helper.resHandler(res, 404, false, null, "Paymint Is not exist")
+            } else {
+
+                helper.resHandler(res, 200, true, paymintData, "Paymint found")
+            }
         }
         catch (e) {
             helper.resHandler(res, 500, false, e, e.message)
@@ -49,7 +64,11 @@ class Paymint {
     static deletePaymint = async (req, res) => {
         try {
             const paymintData = await paymintModel.findByIdAndRemove(req.body.id)
-            helper.resHandler(res, 200, true, paymintData, "Paymint deleted")
+            if (!paymintData) {
+                helper.resHandler(res, 404, false, null, "Paymint Is not exist")
+            } else {
+                helper.resHandler(res, 200, true, paymintData, "Paymint deleted")
+            }
         } catch (e) {
             helper.resHandler(res, 500, false, e, e.message)
         }
