@@ -14,7 +14,12 @@ class Routes {
     static getRoutes = async (req, res) => {
         try {
             const routeData = await routesModel.find();
-            helper.resHandler(res, 200, true, routeData, "Routes found")
+            if (!routeData) {
+                helper.resHandler(res, 404, false, null, "Routes Is not exist")
+            } else {
+
+                helper.resHandler(res, 200, true, routeData, "Routes found")
+            }
         }
         catch (e) {
             helper.resHandler(res, 500, false, e, e.message)
@@ -27,7 +32,12 @@ class Routes {
                 { ...req.body },
                 { new: true }
             );
-            helper.resHandler(res, 200, true, routeData, "Route updated")
+            if (!routeData) {
+                helper.resHandler(res, 404, false, null, "Route Is not exist")
+            } else {
+
+                helper.resHandler(res, 200, true, routeData, "Route updated")
+            }
         }
         catch (e) {
             helper.resHandler(res, 500, false, e, e.message)
@@ -37,7 +47,12 @@ class Routes {
     static deleteRoute = async (req, res) => {
         try {
             const routeData = await routesModel.findByIdAndRemove(req.body.id)
-            helper.resHandler(res, 200, true, routeData, "Route deleted")
+            if (!routeData) {
+                helper.resHandler(res, 404, false, null, "Route Is not exist")
+            } else {
+
+                helper.resHandler(res, 200, true, routeData, "Route deleted")
+            }
         } catch (e) {
             helper.resHandler(res, 500, false, e, e.message)
         }
