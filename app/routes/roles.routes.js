@@ -1,11 +1,11 @@
 const express = require("express");
 const router = new express.Router();
-const rulesController = require("../controller/rules.controller")
+const rolesController = require("../controller/roles.controller")
 
-router.post("/create", rulesController.createRule)
-router.get("/all", rulesController.getRules)
-router.patch("/update", rulesController.updateRules)
-router.delete("/delete", rulesController.deleteRule)
+router.post("/create", rolesController.createRule)
+router.get("/all", rolesController.getRoles)
+router.patch("/update", rolesController.updateRoles)
+router.delete("/delete", rolesController.deleteRule)
 
 
 
