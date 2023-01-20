@@ -16,7 +16,11 @@ class Floor {
     static getFloors = async (req, res) => {
         try {
             const floorData = await floorModel.find();
-            helper.resHandler(res, 200, true, floorData, "Floors found")
+            if (!floorData) {
+                helper.resHandler(res, 404, false, null, "Floors Is not exist")
+            } else {
+                helper.resHandler(res, 200, true, floorData, "Floors found")
+            }
         }
         catch (e) {
             helper.resHandler(res, 500, false, e, e.message)
@@ -26,7 +30,12 @@ class Floor {
     static getFloor = async (req, res) => {
         try {
             const floorData = await floorModel.findById({ _id: req.body.id })
-            helper.resHandler(res, 200, true, floorData, "Floor found")
+            if (!floorData) {
+                helper.resHandler(res, 404, false, null, "Floor Is not exist")
+            } else {
+
+                helper.resHandler(res, 200, true, floorData, "Floor found")
+            }
         }
         catch (e) {
             helper.resHandler(res, 500, false, e, e.message)
@@ -40,7 +49,12 @@ class Floor {
                 { ...req.body },
                 { new: true }
             );
-            helper.resHandler(res, 200, true, floorData, "Floor updated")
+            if (!floorData) {
+                helper.resHandler(res, 404, false, null, "Floor Is not exist")
+            } else {
+
+                helper.resHandler(res, 200, true, floorData, "Floor updated")
+            }
         }
         catch (e) {
             helper.resHandler(res, 500, false, e, e.message)
@@ -50,7 +64,11 @@ class Floor {
     static deleteFloor = async (req, res) => {
         try {
             const floorData = await floorModel.findByIdAndRemove(req.body.id)
-            helper.resHandler(res, 200, true, floorData, "Floor deleted")
+            if (!floorData) {
+                helper.resHandler(res, 404, false, null, "Floor Is not exist")
+            } else {
+                helper.resHandler(res, 200, true, floorData, "Floor deleted")
+            }
         } catch (e) {
             helper.resHandler(res, 500, false, e, e.message)
         }
