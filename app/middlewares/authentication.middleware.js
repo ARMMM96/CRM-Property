@@ -1,5 +1,5 @@
-const userModel = require("../../database/models/user.model")
-const resHelper = require("../helpers/helpers")
+const userModel = require("../db/models/user.model")
+const helper = require("../helpers/helpers")
 const jwt = require("jsonwebtoken")
 const authentication = async (req, res, next) => {
     try {
@@ -10,7 +10,7 @@ const authentication = async (req, res, next) => {
             "tokens.token": token
         })
         if (!userData) {
-            resHelper.resHandler(res, 404, false, e.message, "In valid token")
+            helper.resHandler(res, 404, false, e.message, "In valid token")
             return;
         }
         req.user = userData
@@ -18,7 +18,7 @@ const authentication = async (req, res, next) => {
         next()
     }
     catch (e) {
-        resHelper.resHandler(res, 500, false, e.message, "Unauthenticated request")
+        helper.resHandler(res, 500, false, e.message, "Unauthenticated request")
     }
 }
 module.exports = { authentication }
