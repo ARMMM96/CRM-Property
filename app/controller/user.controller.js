@@ -1,5 +1,7 @@
 const userModel = require('../db/models/user.model')
 const helper = require("../helpers/helpers")
+const multer = require("multer")
+const upload = require('../middlewares/imageUpload.middleware')
 class User {
     static register = async (req, res) => {
         try {
@@ -70,6 +72,25 @@ class User {
 
         } catch (e) {
             helper.resHandler(res, 500, false, e, e.message)
+        }
+    }
+
+    static profilePicture = async (req, res) => {
+        try {
+            const uploadImage = upload.single('img')
+            uploadImage(req, res, async function (err) {
+                if (err instanceof multer.MulterError) {
+                    return res.send({ err: "invalid upload" })
+                } else if (err) {
+                    return res.send({ err: "invalid upload 1" })
+                }
+                req.user.image = req.file.path
+                await req.user.save()
+                helper.resHandler(res, 200, true, req.user, "updated")
+            })
+        }
+        catch (e) {
+            res.send(e.message)
         }
     }
 }
