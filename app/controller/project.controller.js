@@ -1,6 +1,9 @@
 
 const projectModel = require('../db/models/project.model')
 const helper = require("../helpers/helpers")
+const multer = require("multer")
+const upload = require('../middlewares/imageUpload.middleware')
+
 class Project {
     static createProject = async (req, res) => {
         try {
@@ -69,6 +72,29 @@ class Project {
             }
         } catch (e) {
             helper.resHandler(res, 500, false, e, e.message)
+        }
+    }
+
+    static projectPicture = async (req, res) => {
+        try {
+            const uploadImage = upload.single('img')
+            uploadImage(req, res, async function (err) {
+                if (err instanceof multer.MulterError) {
+                    return res.send({ err: "invalid upload" })
+                } else if (err) {
+                    return res.send({ err: "invalid upload 1" })
+                }
+                const projectData = await projectModel.findById({ _id: req.params.id})
+
+                projectData.image = req.file.path
+
+                await projectData.save()
+
+                helper.resHandler(res, 200, true, 'projectData', "updated")
+            })
+        }
+        catch (e) {
+            res.send(e.message)
         }
     }
 
