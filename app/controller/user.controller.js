@@ -23,6 +23,9 @@ class User {
             helper.resHandler(res, 500, false, e, e.message)
         }
     }
+    static profile = (req, res) => {
+        helper.resHandler(res, 200, true, { user: req.user }, "user profile fetched")
+    }
     static getSingleUser = async (req, res) => {
         try {
             const userData = await userModel.findOne({
