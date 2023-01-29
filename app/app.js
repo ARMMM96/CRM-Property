@@ -21,7 +21,7 @@ const paymintRoutes = require('./routes/paymint.routes')
 
 
 app.use("/api/user/", userRoutes)
-app.use("/api/rules/", rulesRoutes)
+app.use("/api/roles/", rulesRoutes)
 app.use("/api/routes/", urlsRoutes)
 app.use("/api/project/", projectRoutes)
 app.use("/api/building/", buildingRoutes)
