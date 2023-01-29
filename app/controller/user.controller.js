@@ -43,6 +43,21 @@ class User {
             helper.resHandler(res, 500, false, e, e.message)
         }
     }
+    static getAllUsers = async (req, res) => {
+        try {
+            const usersData = await userModel.find();
+            if (!usersData) {
+                helper.resHandler(res, 404, false, null, "User Is not exist")
+
+            } else {
+
+                helper.resHandler(res, 200, true, usersData, "User found")
+            }
+        }
+        catch (e) {
+            helper.resHandler(res, 500, false, e, e.message)
+        }
+    }
     static updateUserData = async (req, res) => {
         try {
             const userData = await userModel.findOneAndUpdate(
