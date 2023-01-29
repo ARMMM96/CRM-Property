@@ -25,6 +25,22 @@ class Roles {
             helper.resHandler(res, 500, false, e, e.message)
         }
     }
+    static getRole = async (req, res) => {
+        console.log('fire?')
+        console.log(req.params.id)
+        try {
+            const rolesData = await rolesModel.findById(req.params.id);
+            if (!rolesData) {
+                helper.resHandler(res, 404, false, null, "Role Is not exist")
+            } else {
+
+                helper.resHandler(res, 200, true, rolesData, "Roles found")
+            }
+        }
+        catch (e) {
+            helper.resHandler(res, 500, false, e, e.message)
+        }
+    }
     static updateRoles = async (req, res) => {
         try {
             const rolesData = await rolesModel.findOneAndUpdate(
